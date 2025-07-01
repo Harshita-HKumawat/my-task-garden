@@ -1,0 +1,309 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(145deg, #fbeeff, #ffe8cc);
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+#app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #d6336c;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.theme-toggle input {
+  display: none;
+}
+
+.slider {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  top: 2px;
+  left: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #6a0572;
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+.icon {
+  font-size: 18px;
+}
+
+/* Task Input Section */
+.task-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input,
+.task-input select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  flex: 1;
+}
+
+.task-input button {
+  padding: 10px 16px;
+  background: #ff6f91;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-input button:hover {
+  background: #d6336c;
+}
+
+/* Search & Filters */
+.search-bar,
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}
+
+.filter-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #ccc;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.filter-btn.active {
+  background: #845ec2;
+  color: #fff;
+}
+
+/* Progress */
+.progress-stats {
+  background: #e0f7fa;
+  color: #007b83;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/* Task List */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  background: #fff8f8;
+  padding: 15px;
+  border-left: 6px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.task-item.overdue {
+  border-left-color: red;
+  background-color: #ffe0e0;
+}
+
+.task-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.task-date {
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+  display: block;
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: 18px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+/* Subtask Styles */
+.subtask-container {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ccc;
+}
+
+.subtask-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 5px 0;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fcefee;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.subtask-item.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.subtask-input-wrapper {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.subtask-input-wrapper input {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+
+.subtask-input-wrapper button {
+  padding: 6px 10px;
+  font-size: 14px;
+  background: #f06292;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.subtask-input-wrapper button:hover {
+  background: #d6336c;
+}
+
+/* Dark Theme */
+body.dark {
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  color: #f0f0f0;
+}
+
+body.dark #app {
+  background: #2e2f4a;
+  color: #fff;
+}
+
+body.dark input,
+body.dark select {
+  background: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.dark .task-item {
+  background: #3d3d5c;
+  color: #fff;
+}
+
+body.dark .progress-stats {
+  background: #2a2a3a;
+  color: #66ffff;
+}
+
+body.dark .filter-btn {
+  background: #555;
+  color: #fff;
+}
+
+body.dark .filter-btn.active {
+  background: #845ec2;
+}
+
+body.dark .subtask-item {
+  background: #4e4e70;
+}
+
+body.dark .subtask-input-wrapper input {
+  background: #555;
+  border: 1px solid #777;
+  color: #fff;
+}
+
+body.dark .subtask-input-wrapper button {
+  background: #845ec2;
+}
