@@ -1,2 +1,13 @@
-# my-task-garden
-A powerful To-Do List web app with subtasks, voice input, priority tags, recurring tasks, and theme toggle — built using pure HTML, CSS, and JavaScript.
+# My Task Garden 🌸
+
+A feature-rich To-Do List app with:
+
+- ✅ Subtasks
+- 🎙️ Voice Input
+- 🎯 Priority Selection
+- 🌓 Light/Dark Mode
+- 🔁 Recurring Tasks
+- 🔍 Search & Filter
+- 📊 Progress Tracker
+
+Built using pure HTML, CSS, and JavaScript.
